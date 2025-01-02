@@ -20,6 +20,12 @@ if "," in recipient_emails_env:
 else:
     recipient_emails = [recipient_emails_env.strip()] if recipient_emails_env.strip() else []
 
+# Get the current script directory path (cross-platform)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Set the path for the log file
+log_file_path = os.path.join(script_dir, "bandwidth_log.txt")
+
 # Function to fetch bandwidth data
 def fetch_bandwidth():
     try:
@@ -48,8 +54,8 @@ def convert_to_gb_and_log(data):
             f"  Reset Day: {data['bw_reset_day_of_month']}\n\n"
         )
 
-        # Write to log file
-        with open("bandwidth_log.txt", "a") as log_file:
+        # Write to log file (cross-platform file path)
+        with open(log_file_path, "a") as log_file:
             log_file.write(log_entry)
 
         # Send the log entry via email
