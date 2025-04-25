@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # Define the URL for the bandwidth counter
-URL = os.getenv("JUSTMYSOCKS_URL")
+URL = os.getenv("JMS_URL", "https://example.com/bandwidth")  # Replace with your actual URL
 
 # Environment variables
 sender_email = os.getenv("SENDER_EMAIL")
