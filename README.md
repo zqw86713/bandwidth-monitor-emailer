@@ -19,6 +19,7 @@ This Python script fetches daily bandwidth usage from a remote JSON API, convert
 1. bandwidth_logger.py # Main script 
 1. bandwidth_log.txt # Output log file (auto-created) .
 1. env (optional) # Use for local testing with dotenv
+1. run.sh (optional) # use for local testing with a cron job.
 
 ---
 
