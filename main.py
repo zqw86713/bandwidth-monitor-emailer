@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 
 # Define the URL for the bandwidth counter
-URL = os.getenv("JMS_URL", "https://example.com/bandwidth")  # Replace with your actual URL
+URL = os.getenv("SERVER_URL", "https://example.com/bandwidth")  # Replace with your actual URL
 
 # Environment variables
 sender_email = os.getenv("SENDER_EMAIL")
