@@ -8,12 +8,14 @@ from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 
 
+load_dotenv()  # Loads .env from the same directory as main.py
+
 # Define the URL for the bandwidth counter
 URL = os.getenv("SERVER_URL", "https://example.com/bandwidth")  # Replace with your actual URL
 
 # Environment variables
-sender_email = os.getenv("SENDER_EMAIL")
-sender_password = os.getenv("SENDER_PASSWORD")
+sender_email = os.getenv("SMTP_SENDER_EMAIL")
+sender_password = os.getenv("SMTP_SENDER_PASSWORD")
 recipient_emails_env = os.getenv("RECIPIENT_EMAILS", "")
 
 # Handle recipient emails
@@ -79,7 +81,7 @@ def send_email(subject, body, recipient_emails):
     """
     if not sender_email or not sender_password or not recipient_emails:
         print("Environment variables are not set or are empty.")
-        print(f"SENDER_EMAIL: {sender_email}")
+        print(f"SMTP_SENDER_EMAIL: {sender_email}")
         print(f"RECIPIENT_EMAILS: {recipient_emails}")
         return
 
