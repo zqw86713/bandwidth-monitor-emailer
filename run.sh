@@ -4,7 +4,7 @@
 source /root/.bashrc
 
 # Move into the project directory
-cd /root/band-bandwidth-monitor-emailer/ || exit 1
+cd /root/bandwidth-monitor-emailer/ || exit 1
 
 # Activate virtual environment
 source venv/bin/activate
