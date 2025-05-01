@@ -5,6 +5,8 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+
 
 # Define the URL for the bandwidth counter
 URL = os.getenv("JMS_URL", "https://example.com/bandwidth")  # Replace with your actual URL
